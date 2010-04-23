@@ -1,0 +1,21 @@
+[core]
+  pager = more
+  editor = vim
+
+[log]
+  pager = less
+
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  ui = auto
+
+[user]
+  name = David Chua
+  email = zhchua@gmail.com
+
+[alias]
+  co = checkout
+  st = status
+  ci = commit
