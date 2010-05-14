@@ -19,3 +19,8 @@
   co = checkout
   st = status
   ci = commit
+
+[branch]
+  # prevents git merges upon git pull ; always rebase
+  autosetuprebase = always
+
