@@ -1,6 +1,8 @@
 set path=~/codebase/builder-test
-
+set number
 set background=dark
+colorscheme slate
+
 
 set tabstop=2
 set shiftwidth=2

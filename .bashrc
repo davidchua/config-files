@@ -3,7 +3,15 @@
 # for examples
 
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+
+# Original bash:
+# [ -z "$PS1" ] && return
+
+# bash script replaced when RVM is installed
+if [[ -n "$PS1" ]]; then
+  if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm";
+  fi
+fi
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
@@ -114,5 +122,12 @@ PROMPT_COMMAND=proml
 
 # Pathing
 export PATH=$PATH:$HOME/bin:/var/lib/gems/1.8/bin
+PYTHONPATH=$HOME/lib/python
+
+export PYTHONPATH
+
 alias sudo="sudo env PATH=$PATH"
+alias tf2="WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe
+-applaunch 440 -nointro"
+
 
