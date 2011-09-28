@@ -16,8 +16,11 @@ syntax on
 filetype plugin indent on
 
 " Show trailing whitespace:
-" highlight ExtraWhitespace ctermbg=darkblue guibg=darkblue
-" match ExtraWhitespace /\s\+$/           
+highlight ExtraWhitespace ctermbg=darkred guibg=darkred
+match ExtraWhitespace /\s\+$/
 
 " Turn of beeping
 autocmd GUIEnter * set vb t_vb=
+
+map <ESC>[H <Home>
+map <ESC>[F <END>
