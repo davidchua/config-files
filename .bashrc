@@ -113,7 +113,7 @@ git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 function proml {
-  PS1="\u@\h:\w\[\033[0;32m\]$(parse_git_branch)\[\033[0;0m\]> "
+  PS1="\e[1;32m\u@\h\e[m\e[1;34m \w\e[m\[\033[1;32m \]$(parse_git_branch)\[\033[0;0m\] $ "
   PS2='> '
   PS4='+ '
 }
@@ -127,7 +127,3 @@ PYTHONPATH=$HOME/lib/python
 export PYTHONPATH
 
 alias sudo="sudo env PATH=$PATH"
-alias tf2="WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe
--applaunch 440 -nointro"
-
-
