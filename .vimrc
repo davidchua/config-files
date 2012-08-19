@@ -24,3 +24,10 @@ autocmd GUIEnter * set vb t_vb=
 
 map <ESC>[H <Home>
 map <ESC>[F <END>
+
+
+" Arrow keys! Get rid of 'em!
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
