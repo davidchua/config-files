@@ -16,10 +16,10 @@ rescue LoadError => e
   puts "Gems missing: #{e}"
 end
 
-Hirb.enable
-extend Hirb::Console
 Wirble.init
 Wirble.colorize
+Hirb.enable
+extend Hirb::Console
 
 # Method to pretty-print object methods
 # Coded by sebastian delmont
