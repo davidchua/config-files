@@ -4,22 +4,48 @@ IRB.conf[:AUTO_INDENT]=true
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
 
+def unbundled_require(gem)
+  # https://gist.github.com/2643079
+  if defined?(::Bundler)
+    spec_path = Dir.glob("#{Gem.dir}/specifications/#{gem}-*.gemspec").last
+    if spec_path.nil?
+      warn "Couldn't find #{gem}"
+      return
+    end
+
+    spec = Gem::Specification.load spec_path
+    spec.activate
+  end
+
+  begin
+    require gem
+    yield if block_given?
+  rescue Exception => err
+    warn "Couldn't load #{gem}: #{err}"
+  end
+end
+
+# Then use like this
+# unbundled_require 'wirb' do
+#   Wirb.start
+#   end
 begin
-  require 'rubygems'
+  unbundled_require 'hirb' do
+    Hirb.enable
+    extend Hirb::Console
+  end
+  unbundled_require 'wirble' do
+    Wirble.init
+    Wirble.colorize
+  end
   require 'pp'
   require 'irb/ext/save-history'
-  require 'hirb'
   require 'hirb/import_object'
-  require 'wirble'
   require 'irb/completion'
 rescue LoadError => e
   puts "Gems missing: #{e}"
 end
 
-Wirble.init
-Wirble.colorize
-Hirb.enable
-extend Hirb::Console
 
 # Method to pretty-print object methods
 # Coded by sebastian delmont
