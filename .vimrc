@@ -9,7 +9,11 @@ set nu
 set hlsearch
 set incsearch
 
+" vim-gutter settings
 highlight clear SignColumn
+:sign define dummy
+:execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+
 set textwidth=80
 
 set nocompatible
