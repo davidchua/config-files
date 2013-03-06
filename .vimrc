@@ -9,6 +9,9 @@ set nu
 set hlsearch
 set incsearch
 
+" code-folding
+set foldmethod=indent
+
 " vim-gutter settings
 highlight clear SignColumn
 :sign define dummy
