@@ -65,6 +65,8 @@ autocmd GUIEnter * set vb t_vb=
 map <ESC>[H <Home>
 map <ESC>[F <END>
 
+" map .html.erb to html.eruby snippets
+autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
 
 " Arrow keys! Get rid of 'em!
 " inoremap <Left>  <NOP>
