@@ -20,6 +20,9 @@ highlight clear SignColumn
 set textwidth=80
 
 set nocompatible
+set laststatus=2
+set encoding=utf-8
+
 syntax on
 
 set clipboard+=unnamed
@@ -30,6 +33,9 @@ filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
+" vim-powerline settings 
+set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
 
 "let Vundle manage Vundle
 " required!
