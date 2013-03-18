@@ -11,6 +11,8 @@ set incsearch
 
 " code-folding
 set foldmethod=indent
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 
 " vim-gutter settings
 highlight clear SignColumn
