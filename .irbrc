@@ -24,19 +24,19 @@ def unbundled_require(gem)
     warn "Couldn't load #{gem}: #{err}"
   end
 end
-
+ 
 # Then use like this
 # unbundled_require 'wirb' do
 #   Wirb.start
 #   end
 begin
-  unbundled_require 'hirb' do
-    Hirb.enable
-    extend Hirb::Console
-  end
   unbundled_require 'wirble' do
     Wirble.init
     Wirble.colorize
+  end
+  unbundled_require 'hirb' do
+    Hirb.enable
+    extend Hirb::Console
   end
   require 'pp'
   require 'irb/ext/save-history'
