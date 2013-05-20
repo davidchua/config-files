@@ -9,6 +9,9 @@ set nu
 set hlsearch
 set incsearch
 
+" decoration
+set cursorline
+
 " code-folding
 set foldmethod=indent
 set nofoldenable        "dont fold by default
