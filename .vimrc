@@ -17,11 +17,6 @@ set foldmethod=indent
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
-" vim-gutter settings
-highlight clear SignColumn
-:sign define dummy
-:execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
-
 set textwidth=80
 
 set nocompatible
@@ -84,3 +79,8 @@ autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
 " inoremap <Right> <NOP>
 " inoremap <Up>    <NOP>
 " inoremap <Down>  <NOP>
+
+" vim-gutter settings
+highlight clear SignColumn
+:sign define dummy
+:execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
