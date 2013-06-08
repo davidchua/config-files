@@ -52,6 +52,7 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-gitgutter.git'
+Bundle 'mattn/zencoding-vim'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
