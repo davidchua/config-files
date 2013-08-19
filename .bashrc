@@ -122,7 +122,7 @@ function proml {
 PROMPT_COMMAND=proml
 
 # Pathing
-export PATH=$PATH:$HOME/bin:/var/lib/gems/1.8/bin
+export PATH=$PATH:$HOME/bin:/var/lib/gems/1.8/bin:/opt/local/bin
 PYTHONPATH=$HOME/lib/python
 
 export PYTHONPATH
@@ -131,6 +131,7 @@ alias sudo="sudo env PATH=$PATH"
 alias tf2="WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe
 -applaunch 440 -nointro"
 
-
+alias ..='cd ..'
+alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
