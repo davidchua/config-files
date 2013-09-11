@@ -9,9 +9,6 @@ set nu
 set hlsearch
 set incsearch
 
-" decoration
-set cursorline
-
 " code-folding
 set foldmethod=indent
 set nofoldenable        "dont fold by default
@@ -53,6 +50,8 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-gitgutter.git'
 Bundle 'mattn/zencoding-vim'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-surround'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
