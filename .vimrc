@@ -52,6 +52,7 @@ Bundle 'airblade/vim-gitgutter.git'
 Bundle 'mattn/zencoding-vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-markdown'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
