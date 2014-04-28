@@ -24,6 +24,12 @@ syntax on
 
 set clipboard+=unnamed
 
+let mapleader = ','
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
 
 "filetype plugin indent on
 filetype off
@@ -53,6 +59,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
+Bundle 'nathanaelkane/vim-indent-guides'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
