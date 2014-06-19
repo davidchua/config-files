@@ -80,7 +80,7 @@ autocmd GUIEnter * set vb t_vb=
 map <ESC>[H <Home>
 map <ESC>[F <END>
 
-let g:snippets_dir="/.vim/bundle/snipmate/snippets/, ~/.vim/bundle/my-snippets/snippets"
+let g:snippets_dir="~/.vim/bundle/snipmate/snippets/, ~/.vim/bundle/my-snippets/snippets"
 
 " map .html.erb to html.eruby snippets
 autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
