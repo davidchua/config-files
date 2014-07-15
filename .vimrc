@@ -35,32 +35,32 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 "filetype plugin indent on
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " vim-powerline settings 
 set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
 
 "let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-Bundle 'msanders/snipmate.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'airblade/vim-gitgutter.git'
-Bundle 'mattn/zencoding-vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-markdown'
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-rails.git'
+Plugin 'msanders/snipmate.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter.git'
+Plugin 'mattn/emmet-vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-markdown'
+Plugin 'nathanaelkane/vim-indent-guides'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
@@ -68,6 +68,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
+call vundle#end()
 filetype plugin indent on     " required!
 
 " Show trailing whitespace:
