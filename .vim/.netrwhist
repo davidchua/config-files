@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/davidc/codebase/gadpointsadmin/config/deploy'
+let g:netrw_dirhist_2='/home/davidc/codebase/gig_scraper/lib/gig_scraper'
+let g:netrw_dirhist_3='/home/davidc/codebase/insightly-rb/lib/gig_scraper'
+let g:netrw_dirhist_4='/home/davidc/codebase/insightly-rb/lib/insightly'
+let g:netrw_dirhist_5='/home/davidc/codebase/gig_scraper/lib/gig_scraper'
+let g:netrw_dirhist_6='/home/davidc/codebase/insightly-rb/lib/insightly'
