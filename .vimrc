@@ -30,6 +30,8 @@ let mapleader = ','
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+
 
 
 "filetype plugin indent on
@@ -39,7 +41,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " vim-powerline settings 
-set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
+" set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
+set t_Co=16
 
 "let Vundle manage Vundle
 " required!
@@ -61,6 +64,12 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-markdown'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'ap/vim-buftabline'
+Plugin 'scrooloose/nerdtree'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
@@ -92,7 +101,30 @@ autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
 " inoremap <Up>    <NOP>
 " inoremap <Down>  <NOP>
 
+
+" map Ctrl-N to Buffer next and Ctrl-M to Buffer prev
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-M> :bprev<CR>
+
+nnoremap <C-T> :NERDTreeToggle<CR>
+
+
 " vim-gutter settings
 highlight clear SignColumn
 :sign define dummy
 :execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+
+let g:jsx_ext_required = 0
+syntax enable
+"colorscheme solarized
+"let g:solarized_termcolors=256
+colo CandyPaper
+
+" Set relativenumbers
+set ruler
+set relativenumber
+
+map j <Up>
+map k <Down>
+map h <Left>
+map l <Right>
