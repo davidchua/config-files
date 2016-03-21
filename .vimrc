@@ -28,6 +28,7 @@ set clipboard+=unnamed
 let mapleader = ','
 
 let g:indent_guides_auto_colors = 0
+autocmd BufNewFile,BufRead *.txt,*.markdown,*.md setlocal textwidth=0 wrapmargin=0 formatoptions-=t wrap linebreak nolist
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
@@ -42,7 +43,7 @@ call vundle#begin()
 
 " vim-powerline settings 
 " set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
-set t_Co=16
+set t_Co=256
 
 "let Vundle manage Vundle
 " required!
@@ -118,7 +119,9 @@ let g:jsx_ext_required = 0
 syntax enable
 "colorscheme solarized
 "let g:solarized_termcolors=256
+"colorscheme wattslandia
 colo CandyPaper
+"colo molokai
 
 " Set relativenumbers
 set ruler
