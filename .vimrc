@@ -1,5 +1,4 @@
 set path=~/codebase/builder-test
-
 set fileformat=unix
 set background=dark
 set tabstop=2
@@ -32,8 +31,7 @@ autocmd BufNewFile,BufRead *.txt,*.markdown,*.md setlocal textwidth=0 wrapmargin
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-
-
+autocmd BufNewFile,BufRead *.py set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 "filetype plugin indent on
 filetype off
@@ -71,6 +69,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ap/vim-buftabline'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'christophermca/meta5'
+Plugin 'morhetz/gruvbox'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'vim-scripts/Sift'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
@@ -97,10 +100,16 @@ let g:snippets_dir="~/.vim/bundle/snipmate.vim/snippets/, ~/.vim/bundle/my-snipp
 autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
 
 " Arrow keys! Get rid of 'em!
-" inoremap <Left>  <NOP>
-" inoremap <Right> <NOP>
-" inoremap <Up>    <NOP>
-" inoremap <Down>  <NOP>
+noremap <Left>  <NOP>
+noremap <Right> <NOP>
+noremap <Up>    <NOP>
+noremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+noremap j k
+noremap k j
 
 
 " map Ctrl-N to Buffer next and Ctrl-M to Buffer prev
@@ -120,14 +129,12 @@ syntax enable
 "colorscheme solarized
 "let g:solarized_termcolors=256
 "colorscheme wattslandia
-colo CandyPaper
+"colo CandyPaper
+"colo meta5
 "colo molokai
+colo jellybeans
+syntax on
 
 " Set relativenumbers
 set ruler
-set relativenumber
-
-map j <Up>
-map k <Down>
-map h <Left>
-map l <Right>
+" set relativenumber
