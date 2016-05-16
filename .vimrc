@@ -7,7 +7,6 @@ set expandtab
 set backspace=indent,eol,start
 set nu
 set hlsearch
-set incsearch
 
 " code-folding
 set foldmethod=indent
@@ -55,8 +54,11 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'tpope/vim-rails.git'
-Plugin 'msanders/snipmate.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-ruby/vim-ruby'
@@ -93,6 +95,8 @@ autocmd GUIEnter * set vb t_vb=
 
 map <ESC>[H <Home>
 map <ESC>[F <END>
+
+map <C-Tab> <Plug>snipMateTrigger
 
 let g:snippets_dir="~/.vim/bundle/snipmate.vim/snippets/, ~/.vim/bundle/my-snippets/snippets"
 
@@ -138,3 +142,6 @@ syntax on
 " Set relativenumbers
 set ruler
 " set relativenumber
+"
+let g:loaded_youcompleteme = 1
+map <Leader> <Plug>(easymotion-prefix)
