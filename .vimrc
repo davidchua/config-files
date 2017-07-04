@@ -70,12 +70,14 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ap/vim-buftabline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'christophermca/meta5'
 Plugin 'morhetz/gruvbox'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-scripts/Sift'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'fatih/vim-go'
+Plugin 'SirVer/ultisnips'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
@@ -112,8 +114,8 @@ inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
-noremap j k
-noremap k j
+" noremap j k
+" noremap k j
 
 
 " map Ctrl-N to Buffer next and Ctrl-M to Buffer prev
@@ -121,6 +123,7 @@ nnoremap <C-N> :bnext<CR>
 nnoremap <C-M> :bprev<CR>
 
 nnoremap <C-T> :NERDTreeToggle<CR>
+nnoremap <Leader>T :NERDTreeToggle<CR><CR>
 
 
 " vim-gutter settings
@@ -145,3 +148,10 @@ set ruler
 "
 let g:loaded_youcompleteme = 1
 map <Leader> <Plug>(easymotion-prefix)
+map <Leader>. :cnext<CR>
+map <Leader>, :cprev<CR>
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
