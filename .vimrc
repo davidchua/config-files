@@ -61,6 +61,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'mattn/emmet-vim'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-markdown'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -70,12 +71,12 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ap/vim-buftabline'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'christophermca/meta5'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'morhetz/gruvbox'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-scripts/Sift'
-Plugin 'tomtom/tcomment_vim'
 Plugin 'fatih/vim-go'
 Plugin 'SirVer/ultisnips'
 " vim-scripts repos
@@ -123,7 +124,7 @@ nnoremap <C-N> :bnext<CR>
 nnoremap <C-M> :bprev<CR>
 
 nnoremap <C-T> :NERDTreeToggle<CR>
-nnoremap <Leader>T :NERDTreeToggle<CR><CR>
+nnoremap <Leader>t :NERDTreeToggle<CR>
 
 
 " vim-gutter settings
@@ -145,13 +146,14 @@ syntax on
 " Set relativenumbers
 set ruler
 " set relativenumber
-"
-let g:loaded_youcompleteme = 1
+
+" 1 to disable YCM and 0 to enable
+"let g:loaded_youcompleteme = 1
+
 map <Leader> <Plug>(easymotion-prefix)
-map <Leader>. :cnext<CR>
-map <Leader>, :cprev<CR>
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+let g:go_auto_type_info = 1
+let g:ycm_key_list_select_completion=['<Down>', '<c-j>']
+let g:ycm_key_list_previous_completion=['<Up>', '<c-k>']
