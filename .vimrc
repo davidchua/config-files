@@ -79,6 +79,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-scripts/Sift'
 Plugin 'fatih/vim-go'
 Plugin 'SirVer/ultisnips'
+Plugin 'dracula/vim'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
@@ -140,15 +141,17 @@ syntax enable
 "colo CandyPaper
 "colo meta5
 "colo molokai
-colo jellybeans
+"colo jellybeans
 syntax on
+"colo dracula
+colo jellybeans
 
 " Set relativenumbers
 set ruler
 " set relativenumber
 
 " 1 to disable YCM and 0 to enable
-"let g:loaded_youcompleteme = 1
+let g:loaded_youcompleteme = 1
 
 map <Leader> <Plug>(easymotion-prefix)
 
@@ -157,3 +160,15 @@ let g:go_fmt_fail_silently = 1
 let g:go_auto_type_info = 1
 let g:ycm_key_list_select_completion=['<Down>', '<c-j>']
 let g:ycm_key_list_previous_completion=['<Up>', '<c-k>']
+let g:go_gopls_enabled = 1
+
+autocmd FileType go nnoremap <leader><leader> t :GoTestFunc<CR>
+au filetype go inoremap <buffer> . .<C-x><C-o>
+
+let g:echodoc_enable_at_startup=1
+
+set completeopt=longest,menuone
+set cmdheight=2
+
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
