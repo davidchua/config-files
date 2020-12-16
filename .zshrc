@@ -1,18 +1,28 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/home/davidc/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:/home/davidc/.local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="honukai"
-ZSH_THEME="juanghurtado"
+# Path to your oh-my-zsh installation.
+  export ZSH="/home/davidc/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="dpoggi"
+ZSH_THEME="spaceship"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -40,24 +50,33 @@ ZSH_THEME="juanghurtado"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  golang
+  kube-ps1
+  kubectl
+  autojump
+)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-  export PATH="/home/davidc/.pyenv/plugins/pyenv-virtualenvwrapp/shims:/home/davidc/.pyenv/libexec:/home/davidc/.pyenv/plugins/python-build/bin:/home/davidc/.pyenv/plugins/pyenv-virtualenvwrapp/bin:/home/davidc/.pyenv/plugins/pyenv-virtualenv/bin:/home/davidc/.pyenv/plugins/pyenv-update/bin:/home/davidc/.pyenv/plugins/pyenv-installer/bin:/home/davidc/.pyenv/plugins/pyenv-doctor/bin:/home/davidc/.pyenv/plugins/pyenv-virtualenv/shims:/home/davidc/.pyenv/shims:/home/davidc/.pyenv/bin:/home/davidc/.nvm/v0.10.40/bin:/home/davidc/.pyenv/plugins/pyenv-virtualenvwrapp/shims:/home/davidc/.pyenv/libexec:/home/davidc/.pyenv/plugins/python-build/bin:/home/davidc/.pyenv/plugins/pyenv-virtualenvwrapp/bin:/home/davidc/.pyenv/plugins/pyenv-virtualenv/bin:/home/davidc/.pyenv/plugins/pyenv-update/bin:/home/davidc/.pyenv/plugins/pyenv-installer/bin:/home/davidc/.pyenv/plugins/pyenv-doctor/bin:/home/davidc/.pyenv/plugins/pyenv-virtualenv/shims:/home/davidc/.pyenv/shims:/home/davidc/.pyenv/bin:/home/davidc/.rvm/gems/ruby-2.1.3/bin:/home/davidc/.rvm/gems/ruby-2.1.3@global/bin:/home/davidc/.rvm/rubies/ruby-2.1.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/davidc/.rvm/bin:/home/davidc/bin:/var/lib/gems/1.8/bin:/opt/local/bin:/home/davidc/.rvm/bin:/home/davidc/.rvm/bin:/home/davidc/bin:/var/lib/gems/1.8/bin:/opt/local/bin:/home/davidc/.rvm/bin:/home/davidc/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -73,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -83,18 +102,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls='ls -all --color'
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
+KUBE_PS1_SUFFIX=") "
+#PROMPT='$(kube_ps1)'$PROMPT
+export GOPATH=/home/davidc/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:$GOBIN:~/.jx/bin
 
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
-bindkey  "^[[1~"   beginning-of-line
-bindkey  "^[[4~"   end-of-line
+eval "$(direnv hook zsh)"
 
 export PATH="/home/davidc/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-pyenv virtualenvwrapper
-alias py='python'
+export PATH="$HOME/.krew/bin:$PATH:/snap/bin"
