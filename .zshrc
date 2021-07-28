@@ -105,10 +105,15 @@ source $ZSH/oh-my-zsh.sh
 KUBE_PS1_SUFFIX=") "
 #PROMPT='$(kube_ps1)'$PROMPT
 export GOPATH=/home/davidc/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:$GOBIN:~/.jx/bin
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:$GOBIN
 
 eval "$(direnv hook zsh)"
 
+
+alias docor="docker-compose run --rm web"
+alias docort="docker-compose run --rm test"
 export PATH="/home/davidc/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH="$HOME/.krew/bin:$PATH:/snap/bin"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
