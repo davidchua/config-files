@@ -32,6 +32,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd BufNewFile,BufRead *.py set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
+
 "filetype plugin indent on
 filetype off
 
@@ -49,9 +50,9 @@ Plugin 'gmarik/Vundle.vim'
 " My Bundles here:
 "
 " original repos on github
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Lokaltog/vim-powerline'
+"Plugin 'Lokaltog/vim-powerline'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'tpope/vim-rails.git'
 Plugin 'kien/ctrlp.vim'
@@ -82,12 +83,26 @@ Plugin 'SirVer/ultisnips'
 Plugin 'dracula/vim'
 " language-server client
 Plugin 'natebosch/vim-lsc'
+Plugin 'luochen1990/rainbow'
+" react/js
+Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'neoclide/vim-easygit'
+
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'hashivim/vim-terraform'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
+"
+Plugin 'artanikin/vim-synthwave84'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'nvie/vim-flake8'
+Plugin 'gleam-lang/gleam.vim'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'sainnhe/sonokai'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -107,7 +122,7 @@ map <C-Tab> <Plug>snipMateTrigger
 let g:snippets_dir="~/.vim/bundle/snipmate.vim/snippets/, ~/.vim/bundle/my-snippets/snippets"
 
 " map .html.erb to html.eruby snippets
-autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
+autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby nowrap
 
 " Arrow keys! Get rid of 'em!
 noremap <Left>  <NOP>
@@ -129,6 +144,8 @@ nnoremap <C-M> :bprev<CR>
 nnoremap <C-T> :NERDTreeToggle<CR>
 nnoremap <Leader>t :NERDTreeToggle<CR>
 
+nnoremap <Leader>g :Gblame<CR>
+
 
 " vim-gutter settings
 highlight clear SignColumn
@@ -140,13 +157,17 @@ syntax enable
 "colorscheme solarized
 "let g:solarized_termcolors=256
 "colorscheme wattslandia
-"colo CandyPaper
 "colo meta5
 "colo molokai
 "colo jellybeans
 syntax on
 "colo dracula
-colo jellybeans
+"
+" REAL
+"colo jellybeans
+"colo CandyPaper
+"colo synthwave84
+"colo sonokai
 
 " Set relativenumbers
 set ruler
@@ -193,3 +214,18 @@ let g:lsc_enable_diagnostics   = v:false
 let g:lsc_reference_highlights = v:false
 let g:lsc_trace_level          = 'off'
 "let g:lsc_auto_map = v:true
+"
+let g:snipMate = { 'snippet_version' : 1 }
+
+let g:rainbow_active = 1
+let g:omni_sql_no_default_maps = 1
+let g:easygit_enable_command = 1
+
+" Set split panel
+set fillchars+=vert:\|
+highlight VertSplit ctermbg=black ctermfg=black cterm=NONE
+
+set noemoji
+"
+ab :+1: 👍
+
